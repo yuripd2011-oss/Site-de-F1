@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Uma página sobre a Fórmula 1 e a equipe Mercedes-AMG PETRONAS.">
+    <title>Mercedes-AMG PETRONAS | Fórmula 1</title>
+    <style>
+        :root {
+            color-scheme: dark;
+            --fundo: #101719;
+            --superficie: #192225;
+            --texto: #f4f7f6;
+            --suave: #b7c3c1;
+            --turquesa: #00d2be;
+            --borda: #344447;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--fundo);
+            color: var(--texto);
+            font-family: Arial, Helvetica, sans-serif;
+            line-height: 1.7;
+        }
+
+        header,
+        main,
+        footer {
+            width: min(100% - 32px, 1080px);
+            margin-inline: auto;
+        }
+
+        header {
+            padding: 28px 0 18px;
+        }
+
+        .marca {
+            color: var(--turquesa);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+        }
+
+        h1 {
+            max-width: 760px;
+            margin: 8px 0 12px;
+            font-size: clamp(2.2rem, 6vw, 4.5rem);
+            letter-spacing: -0.04em;
+        }
+
+        h2 {
+            color: var(--turquesa);
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
+        }
+
+        h3 {
+            margin-bottom: 8px;
+        }
+
+        p,
+        li {
+            color: var(--suave);
+        }
+
+        nav ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        nav a,
+        .botao {
+            display: inline-block;
+            padding: 9px 14px;
+            border: 1px solid var(--borda);
+            border-radius: 999px;
+            color: var(--texto);
+            text-decoration: none;
+            transition: background-color 160ms ease, color 160ms ease, border-color 160ms ease;
+        }
+
+        nav a:hover,
+        nav a:focus-visible,
+        .botao:hover,
+        .botao:focus-visible {
+            border-color: var(--turquesa);
+            background-color: var(--turquesa);
+            color: #071311;
+        }
+
+        main {
+            padding-bottom: 32px;
+        }
+
+        .abertura {
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) minmax(280px, 0.85fr);
+            align-items: center;
+            gap: 34px;
+            padding: 34px;
+            border: 1px solid var(--borda);
+            border-radius: 20px;
+            background: linear-gradient(135deg, #1a282b, #12191b 70%);
+        }
+
+        .abertura p {
+            max-width: 580px;
+        }
+
+        .foto-destaque,
+        .foto-carro {
+            display: block;
+            width: 100%;
+            height: auto;
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+        }
+
+        .destaque-fas {
+            display: grid;
+            grid-template-columns: minmax(0, 300px) 1fr;
+            align-items: center;
+            gap: 24px;
+            margin-top: 18px;
+        }
+
+        .foto-colecionavel {
+            display: block;
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        figure {
+            margin: 0;
+        }
+
+        figcaption {
+            padding-top: 8px;
+            color: var(--suave);
+            font-size: 0.88rem;
+        }
+
+        section {
+            padding: 36px 0 12px;
+            scroll-margin-top: 20px;
+        }
+
+        hr {
+            margin: 28px 0 0;
+            border: 0;
+            border-top: 1px solid var(--borda);
+        }
+
+        .grade {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 18px;
+        }
+
+        .cartao {
+            padding: 20px;
+            border: 1px solid var(--borda);
+            border-radius: 14px;
+            background-color: var(--superficie);
+        }
+
+        .cartao p:last-child {
+            margin-bottom: 0;
+        }
+
+        ul.conteudo {
+            padding-left: 22px;
+        }
+
+        ul.conteudo li {
+            padding: 3px 0;
+        }
+
+        mark {
+            padding: 0 4px;
+            background-color: var(--turquesa);
+            color: #071311;
+        }
+
+        .links-externos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
+        }
+
+        footer {
+            padding: 24px 0 36px;
+            border-top: 1px solid var(--borda);
+            color: var(--suave);
+            font-size: 0.92rem;
+        }
+
+        footer p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 720px) {
+            .abertura,
+            .grade,
+            .destaque-fas {
+                grid-template-columns: 1fr;
+            }
+
+            .abertura {
+                padding: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header id="topo">
+        <p class="marca">Mercedes-AMG PETRONAS Formula One Team</p>
+        <h1>Velocidade, tecnologia e paixão pela F1</h1>
+        <p>Conheça um pouco do universo da Fórmula 1 com as cores da Mercedes: preto, prata e o marcante turquesa Petronas.</p>
+
+        <nav aria-label="Navegação principal">
+            <ul>
+                <li><a href="#sobre">Sobre a F1</a></li>
+                <!-- aqui tem um link -->
+                <li><a href="#mercedes">Mercedes na pista</a></li>
+                <!-- aqui tem um link -->
+                <li><a href="#carro">O carro</a></li>
+                <!-- aqui tem um link -->
+                <li><a href="#links">Saiba mais</a></li>
+                <!-- aqui tem um link -->
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <div class="abertura">
+            <div>
+                <p class="marca">Uma equipe, muitos detalhes</p>
+                <h2 id="sobre">O que é a Fórmula 1?</h2>
+                <p>A Fórmula 1 é uma categoria internacional de automobilismo em que equipes e pilotos competem em circuitos ao redor do mundo. Cada corrida é chamada de <em>Grande Prêmio</em> e faz parte de um campeonato disputado ao longo da temporada.</p>
+                <p>Além de velocidade, a F1 exige estratégia, trabalho em equipe e <strong>engenharia de alta precisão</strong>. Cada parada nos boxes pode fazer a diferença: <mark>um segundo vale muito na pista!</mark></p>
+                <a class="botao" href="#links">Explore os links oficiais</a>
+                <!-- aqui tem um link -->
+            </div>
+            <figure>
+                <img class="foto-destaque" src="imagens/mercedes-piloto.png" alt="George Russell comemorando T pose, piloto da Mercedes-AMG PETRONAS F1 Team" width="900">
+                <figcaption>George Russell comemorando T pose.</figcaption>
+            </figure>
+        </div>
+
+        <hr>
+
+        <section id="mercedes">
+            <h2>Mercedes na Fórmula 1</h2>
+            <p>A Mercedes tem uma longa história no automobilismo e voltou a competir na Fórmula 1 como equipe de fábrica em 2010. A equipe combina experiência nas pistas com o desenvolvimento constante de novas soluções para seus carros.</p>
+
+            <div class="grade">
+                <article class="cartao">
+                    <h3>O trabalho da equipe</h3>
+                    <p>Pilotos, engenheiros e mecânicos trabalham juntos antes e durante cada Grande Prêmio. As decisões sobre pneus, ajustes e estratégia são parte essencial da competição.</p>
+                </article>
+                <article class="cartao">
+                    <h3>As cores da Mercedes</h3>
+                    <p>O visual do site destaca o <b>preto</b>, o <i>prata</i> e o turquesa inspirado pela Petronas, criando uma identidade ligada à equipe e à velocidade.</p>
+                </article>
+            </div>
+            <figure class="cartao destaque-fas">
+                <a href="https://shop-int.mercedesamgf1.com/cdn/shop/files/94751_1.jpg?v=1788269308&amp;width=2880" target="_blank" rel="noopener noreferrer">
+                    <img class="foto-colecionavel" src="https://shop-int.mercedesamgf1.com/cdn/shop/files/94751_1.jpg?v=1788269308&amp;width=2880" alt="Miniatura colecionável de um piloto da Mercedes com capacete turquesa" width="360">
+                </a>
+                <!-- aqui tem um link -->
+                <figcaption>funko pop do George Russell .</figcaption>
+            </figure>
+        </section>
+
+        <hr>
+
+        <section id="carro">
+            <h2>O carro de Fórmula 1</h2>
+            <p>Um carro de F1 é projetado para ser rápido, seguro e eficiente. A aerodinâmica ajuda a manter o carro estável, enquanto os pneus e as configurações são escolhidos de acordo com o circuito e as condições da corrida.</p>
+
+            <div class="grade">
+                <figure class="cartao">
+                    <img class="foto-carro" src="imagens/carro-mercedes.svg" alt="Ilustração de um carro de Fórmula 1 nas cores preto, prata e turquesa" width="900">
+                    <figcaption>Ilustração de um carro de corrida com as cores da Mercedes.</figcaption>
+                </figure>
+                <div class="cartao">
+                    <h3>O que observar durante uma corrida</h3>
+                    <ul class="conteudo">
+                        <li><strong>Classificação:</strong> define a ordem de largada.</li>
+                        <li><strong>Pit stop:</strong> parada para trocar os pneus e fazer ajustes.</li>
+                        <li><strong>Estratégia:</strong> escolha do momento certo para cada parada.</li>
+                        <li><strong>Bandeira quadriculada:</strong> indica o fim da corrida.<br><br><em>Que vença o melhor!</em></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+        <section id="links">
+            <h2>Saiba mais</h2>
+            <p>Visite os sites oficiais para acompanhar notícias, equipes e resultados da Fórmula 1:</p>
+            <div class="links-externos">
+                <a class="botao" href="https://www.formula1.com/" target="_blank" rel="noopener noreferrer">Site oficial da Fórmula 1</a>
+                <!-- aqui tem um link -->
+                <a class="botao" href="https://www.mercedesamgf1.com/" target="_blank" rel="noopener noreferrer">Mercedes-AMG PETRONAS F1</a>
+                <!-- aqui tem um link -->
+            </div>
+            <p><a href="#topo">Voltar ao início ↑</a></p>
+            <!-- aqui tem um link -->
+        </section>
+    </main>
+
+    <footer>
+    </footer>
+</body>
+</html>
